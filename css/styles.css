@@ -1,30 +1,41 @@
- .gallery {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 10px;
-     list-style: none;
-     padding: 0;
-     margin: 0;
- }
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    /* Отступы между изображениями по горизонтали и вертикали */
+    justify-content: center;
+    list-style: none;
+    padding: 24px 156px;
+    /* Отступы сверху, снизу и по бокам */
+    margin: 0;
+    box-sizing: border-box;
+}
 
- .gallery-item {
-     flex: 1 1 calc(33.333% - 10px);
- }
+.gallery-item {
+    flex: 0 1 calc((1128px - 48px) / 3);
+    /* Вычисляем ширину для трёх изображений в строке */
+    height: 200px;
+    margin-bottom: 24px;
+    /* Отступ между строками */
+}
 
- .gallery-link {
-     display: block;
-     text-decoration: none;
-     border: none;
- }
+.gallery-link {
+    display: block;
+    text-decoration: none;
+}
 
- .gallery-image {
-     display: block;
-     width: 100%;
-     height: auto;
-     border-radius: 8px;
-     transition: transform 0.3s ease;
- }
+.gallery-image {
+    display: block;
+    width: 100%;
+    /* Задаем ширину равной родительскому контейнеру */
+    height: 100%;
+    /* Высота изображения */
+    object-fit: cover;
+    /* Обеспечиваем корректное отображение */
+    transition: transform 0.3s ease;
+}
 
- .gallery-image:hover {
-     transform: scale(1.05);
- }
+.gallery-image:hover {
+    transform: scale(1.05);
+    /* Эффект увеличения при наведении */
+}
